@@ -1,0 +1,69 @@
+﻿@model IEnumerable<SistemaAcademicoAula3.Models.Estudante>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Endereco.Endereco1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NivelEnsino.Descricao)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NomeEstudante)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DataNascimento)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Altura)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Peso)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EnderecoID)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Endereco.Endereco1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NivelEnsino.Descricao)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NomeEstudante)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataNascimento)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Altura)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Peso)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EnderecoID)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.EstudanteID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.EstudanteID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.EstudanteID })
+        </td>
+    </tr>
+}
+
+</table>

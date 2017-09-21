@@ -1,0 +1,42 @@
+﻿@model SistemaAcademicoAula3.Models.Professor
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Professor</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NivelEnsino.Descricao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NivelEnsino.Descricao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProfessorNome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProfessorNome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TipoProfessor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TipoProfessor)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ProfessorId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

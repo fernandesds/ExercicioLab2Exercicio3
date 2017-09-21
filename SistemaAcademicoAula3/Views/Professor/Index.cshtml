@@ -1,0 +1,45 @@
+﻿@model IEnumerable<SistemaAcademicoAula3.Models.Professor>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NivelEnsino.Descricao)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProfessorNome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TipoProfessor)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NivelEnsino.Descricao)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProfessorNome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TipoProfessor)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ProfessorId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ProfessorId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ProfessorId })
+        </td>
+    </tr>
+}
+
+</table>
